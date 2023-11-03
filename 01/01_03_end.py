@@ -34,7 +34,7 @@ class MarkovChain:
             if not options:
                 continue
             # use random.choice method to pick a current option
-            
+            current = random.choice(options)
             # add the random choice to the output string
-    
+            output += f" {current}"
         return output
