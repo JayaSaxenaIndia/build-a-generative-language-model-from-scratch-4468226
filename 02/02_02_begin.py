@@ -64,3 +64,10 @@ show_hints = False
 def get_sentiment(text):
     cl = NaiveBayesClassifier(post_comments_with_labels)
     return cl.classify(text)
+
+
+'''# This is how your code will be called.
+# Your answer should be the largest value in the numbers list.
+text = "Both love and hate this post"
+result = Answer.get_sentiment(text)
+'''
