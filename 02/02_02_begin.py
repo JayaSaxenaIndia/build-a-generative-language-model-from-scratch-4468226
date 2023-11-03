@@ -41,7 +41,18 @@ class NaiveBayesClassifier:
         tokens = self.tokenize(text)
         pos = []
         neg = []
-
+        # TODO: just all all the counts and later divide
+        for token in tokens:
+            pos.append(self.pos_counter[token]/ self.sample_count)
+            neg.append(self.neg_counter[token]/self.sample_count)
+        total_pos = sum(pos)
+        total_neg = sum(neg)
+        if total_pos == total_neg:
+            return "neutral"
+        elif total_pos > total_neg:
+            return "pos"
+        else:
+            return "neg"
 
 
 
