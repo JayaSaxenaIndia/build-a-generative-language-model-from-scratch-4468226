@@ -1,5 +1,6 @@
 
 import random
+# string.punctuation will give the all sets of punctuation. 
 from string import punctuation
 from collections import defaultdict
 
@@ -10,6 +11,9 @@ class MarkovChain:
 
     def _tokenize(self, text):
         return (
+            # The translate() method returns a string where some specified characters are replaced with the character described in a dictionary, or in a mapping table.
+            # Use the maketrans() method to create a mapping table.
+            # str.maketrans(<string specifying the characters you want to replace>, <replace with the corresponding character in this string>, <which characters to remove>) 
             text.translate(str.maketrans("", "", punctuation + "1234567890"))
             .replace("\n", " ")
             .split(" ")
